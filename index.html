@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms & Conditions — Mantra Reminder</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, sans-serif; line-height: 1.55; max-width: 42rem; margin: 2rem auto; padding: 0 1.25rem; }
+    #content h1 { font-size: 1.75rem; margin-top: 0; }
+    #content h2 { font-size: 1.15rem; margin-top: 1.75rem; }
+    #content hr { border: none; border-top: 1px solid #ccc; margin: 2rem 0; }
+    a { color: inherit; }
+  </style>
+</head>
+<body>
+  <main id="content">Loading…</main>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    fetch('TERMS.md')
+      .then(function (r) { return r.text(); })
+      .then(function (text) {
+        document.getElementById('content').innerHTML = marked.parse(text);
+      })
+      .catch(function () {
+        document.getElementById('content').innerHTML = '<p>Could not load TERMS.md. Open <a href="TERMS.md">TERMS.md</a> on GitHub.</p>';
+      });
+  </script>
+</body>
+</html>
