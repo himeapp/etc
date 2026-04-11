@@ -19,15 +19,24 @@
 <body>
   <nav><a href="../terms/">Terms</a> · <a href="../privacy/"><strong>Privacy</strong></a></nav>
   <main id="content">Loading…</main>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="../assets/marked.min.js"></script>
   <script>
-    fetch('../privacy.md')
-      .then(function (r) { return r.text(); })
+    function siblingMdUrl(name) {
+      var p = location.pathname.replace(/\/index\.html$/i, '');
+      if (!p.endsWith('/')) p += '/';
+      return new URL('../' + name, location.origin + p).href;
+    }
+    fetch(siblingMdUrl('privacy.md'))
+      .then(function (r) {
+        if (!r.ok) throw new Error(String(r.status));
+        return r.text();
+      })
       .then(function (text) {
+        if (typeof marked === 'undefined' || !marked.parse) throw new Error('marked');
         document.getElementById('content').innerHTML = marked.parse(text);
       })
       .catch(function () {
-        document.getElementById('content').innerHTML = '<p>Could not load privacy.md. Open <a href="https://github.com/himeapp/etc/blob/main/privacy.md">privacy.md</a> on GitHub.</p>';
+        document.getElementById('content').innerHTML = '<p>문서를 불러오지 못했습니다. <a href="https://github.com/himeapp/etc/blob/main/privacy.md">GitHub에서 privacy.md 보기</a></p>';
       });
   </script>
 </body>
