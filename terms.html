@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Privacy Policy — Mantra Reminder</title>
+  <title>Terms & Conditions — Mantra Reminder</title>
   <style>
     :root { color-scheme: light dark; }
     body { font-family: system-ui, sans-serif; line-height: 1.55; max-width: 42rem; margin: 2rem auto; padding: 0 1.25rem; }
@@ -17,17 +17,17 @@
   </style>
 </head>
 <body>
-  <nav><a href="terms.html">Terms</a> · <a href="privacy.html"><strong>Privacy</strong></a></nav>
+  <nav><a href="terms.html"><strong>Terms</strong></a> · <a href="privacy.html">Privacy</a></nav>
   <main id="content">Loading…</main>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
-    fetch('privacy.md')
+    fetch('TERMS.md')
       .then(function (r) { return r.text(); })
       .then(function (text) {
         document.getElementById('content').innerHTML = marked.parse(text);
       })
       .catch(function () {
-        document.getElementById('content').innerHTML = '<p>Could not load privacy.md. Open <a href="privacy.md">privacy.md</a> on GitHub.</p>';
+        document.getElementById('content').innerHTML = '<p>Could not load TERMS.md. Open <a href="TERMS.md">TERMS.md</a> on GitHub.</p>';
       });
   </script>
 </body>
