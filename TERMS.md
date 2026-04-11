@@ -1,8 +1,10 @@
 # 이용약관 / Terms & Conditions
 
-[한국어](#이용약관-한국어) · [English](#terms--conditions-english)
+[한국어](#terms-ko) · [English](#terms-en)
 
 ---
+
+<a id="terms-ko"></a>
 
 ## 이용약관 (한국어)
 
@@ -37,6 +39,8 @@ Wi-Fi 밖에서 애플리케이션을 이용하는 경우, 이동통신사와의
 이용약관에 관한 질문이나 제안이 있으시면 himeggim@gmail.com으로 연락해 주세요.
 
 ---
+
+<a id="terms-en"></a>
 
 ## Terms & Conditions (English)
 
