@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TodoLock — 개인정보 처리방침 / Privacy Policy</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.7; }
+    a { color: inherit; }
+    nav { margin-bottom: 2rem; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <nav><a href="../">← TodoLock Legal</a></nav>
+  <div id="content"><p>불러오는 중...</p></div>
+  <script src="../../assets/marked.min.js"></script>
+  <script>
+    fetch("../privacy.md")
+      .then(r => r.ok ? r.text() : Promise.reject(r))
+      .then(text => { document.getElementById("content").innerHTML = marked.parse(text); })
+      .catch(() => {
+        document.getElementById("content").innerHTML =
+          "<p>문서를 불러올 수 없습니다. <a href='https://github.com/himeapp/etc/blob/main/todolock/privacy.md'>GitHub에서 보기</a></p>";
+      });
+  </script>
+</body>
+</html>
