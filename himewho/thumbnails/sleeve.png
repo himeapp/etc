@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="tarot.kids — glowing tarot card with moon">
+  <defs>
+    <radialGradient id="D-bg" cx="50%" cy="40%" r="78%">
+      <stop offset="0%" stop-color="#1f1640"/>
+      <stop offset="55%" stop-color="#130d28"/>
+      <stop offset="100%" stop-color="#0a0716"/>
+    </radialGradient>
+
+    <linearGradient id="D-card" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#241852"/>
+      <stop offset="100%" stop-color="#140b30"/>
+    </linearGradient>
+
+    <linearGradient id="D-edge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3d889"/>
+      <stop offset="50%" stop-color="#d4a84c"/>
+      <stop offset="100%" stop-color="#8a6824"/>
+    </linearGradient>
+
+    <linearGradient id="D-moon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fae3a0"/>
+      <stop offset="55%" stop-color="#e8c878"/>
+      <stop offset="100%" stop-color="#a07a2c"/>
+    </linearGradient>
+
+    <radialGradient id="D-moonglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f0d68c" stop-opacity="0.85"/>
+      <stop offset="40%" stop-color="#f0d68c" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#f0d68c" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="D-cardlight" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#5c44a8" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#5c44a8" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="D-soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+  </defs>
+
+  <!-- night sky -->
+  <rect width="512" height="512" rx="112" fill="url(#D-bg)"/>
+
+  <!-- ambient stars (A-style purple twinkle) -->
+  <g fill="#b09ee0">
+    <circle cx="78"  cy="108" r="2.6" opacity="0.85"/>
+    <circle cx="438" cy="92"  r="1.8" opacity="0.70"/>
+    <circle cx="58"  cy="232" r="1.4" opacity="0.55"/>
+    <circle cx="460" cy="262" r="2.2" opacity="0.80"/>
+    <circle cx="86"  cy="404" r="2.0" opacity="0.70"/>
+    <circle cx="448" cy="430" r="1.6" opacity="0.60"/>
+    <circle cx="170" cy="64"  r="1.2" opacity="0.50"/>
+    <circle cx="338" cy="78"  r="1.0" opacity="0.45"/>
+  </g>
+
+  <!-- outer gold sparkle hovering near the card -->
+  <g fill="#f4dc94" opacity="0.95">
+    <path d="M 96 168 L 100 182 L 114 186 L 100 190 L 96 204 L 92 190 L 78 186 L 92 182 Z"/>
+    <path d="M 426 350 L 431 366 L 447 371 L 431 376 L 426 392 L 421 376 L 405 371 L 421 366 Z"/>
+  </g>
+
+  <!-- TAROT CARD -->
+  <g transform="translate(256 268) rotate(-7)">
+    <!-- card shadow -->
+    <rect x="-124" y="-176" width="248" height="352" rx="22"
+          fill="#000" opacity="0.42" transform="translate(10 14)" filter="url(#D-soft)"/>
+
+    <!-- card body -->
+    <rect x="-124" y="-176" width="248" height="352" rx="22"
+          fill="url(#D-card)"
+          stroke="url(#D-edge)" stroke-width="5"/>
+
+    <!-- subtle inner light wash -->
+    <rect x="-124" y="-176" width="248" height="352" rx="22" fill="url(#D-cardlight)"/>
+
+    <!-- inner double border -->
+    <rect x="-110" y="-162" width="220" height="324" rx="14"
+          fill="none" stroke="url(#D-edge)" stroke-width="1.4" opacity="0.85"/>
+    <rect x="-104" y="-156" width="208" height="312" rx="11"
+          fill="none" stroke="url(#D-edge)" stroke-width="0.7" opacity="0.45"/>
+
+    <!-- moon glow (large, A-style warmth) -->
+    <circle cx="0" cy="-12" r="118" fill="url(#D-moonglow)"/>
+    <circle cx="0" cy="-12" r="78"  fill="url(#D-moonglow)" opacity="0.7"/>
+
+    <!-- crescent moon (bigger, warmer) -->
+    <g transform="rotate(-22)">
+      <path d="
+        M 0 -82
+        A 82 82 0 1 0 0 82
+        A 66 66 0 1 1 0 -82 Z"
+        fill="url(#D-moon)"/>
+    </g>
+
+    <!-- gold sparkle stars around the moon (A's 4-point motif) -->
+    <g fill="#fae3a0">
+      <path d="M 64 -94 L 69 -78 L 85 -73 L 69 -68 L 64 -52 L 59 -68 L 43 -73 L 59 -78 Z" opacity="0.95"/>
+      <path d="M -72 60 L -68 72 L -56 76 L -68 80 L -72 92 L -76 80 L -88 76 L -76 72 Z" opacity="0.85"/>
+      <path d="M 78 70 L 81 80 L 91 83 L 81 86 L 78 96 L 75 86 L 65 83 L 75 80 Z" opacity="0.75"/>
+    </g>
+
+    <!-- bottom decorative dots (kept from C) -->
+    <g fill="url(#D-edge)" opacity="0.9">
+      <circle cx="-24" cy="130" r="2.2"/>
+      <circle cx="0"   cy="130" r="3.2"/>
+      <circle cx="24"  cy="130" r="2.2"/>
+    </g>
+
+    <!-- top crown dot -->
+    <circle cx="0" cy="-138" r="2.4" fill="url(#D-edge)" opacity="0.9"/>
+  </g>
+</svg>
